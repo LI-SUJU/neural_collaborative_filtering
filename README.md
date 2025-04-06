@@ -1,22 +1,21 @@
-<p align="center">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="center" width="30%">
-</p>
-<p align="center"><h1 align="center">NEURAL_COLLABORATIVE_FILTERING</h1></p>
-<p align="center">
+<div align="left" style="position: relative;">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="right" width="30%" style="margin: -20px 0 0 20px;">
+<h1>NEURAL_COLLABORATIVE_FILTERING</h1>
+<p align="left">
 	<em><code>❯ REPLACE-ME</code></em>
 </p>
-<p align="center">
-	<img src="https://img.shields.io/github/license/LI-SUJU/neural_collaborative_filtering?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
-	<img src="https://img.shields.io/github/last-commit/LI-SUJU/neural_collaborative_filtering?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/LI-SUJU/neural_collaborative_filtering?style=default&color=0080ff" alt="repo-top-language">
-	<img src="https://img.shields.io/github/languages/count/LI-SUJU/neural_collaborative_filtering?style=default&color=0080ff" alt="repo-language-count">
+<p align="left">
+	<img src="https://img.shields.io/github/license/LI-SUJU/neural_collaborative_filtering?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
+	<img src="https://img.shields.io/github/last-commit/LI-SUJU/neural_collaborative_filtering?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+	<img src="https://img.shields.io/github/languages/top/LI-SUJU/neural_collaborative_filtering?style=flat&color=0080ff" alt="repo-top-language">
+	<img src="https://img.shields.io/github/languages/count/LI-SUJU/neural_collaborative_filtering?style=flat&color=0080ff" alt="repo-language-count">
 </p>
-<p align="center"><!-- default option, no dependency badges. -->
+<p align="left">Built with the tools and technologies:</p>
+<p align="left">
+	<img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white" alt="Python">
 </p>
-<p align="center">
-	<!-- default option, no dependency badges. -->
-</p>
-<br>
+</div>
+<br clear="right">
 
 ## 🔗 Table of Contents
 
@@ -52,7 +51,22 @@
 
 ```sh
 └── neural_collaborative_filtering/
-    └── NCF.py
+    ├── NCF.py
+    ├── NCF_degraded.py
+    ├── README.md
+    ├── dataset
+    │   ├── .DS_Store
+    │   ├── README
+    │   ├── movies.dat
+    │   ├── ratings.dat
+    │   └── users.dat
+    ├── loss_curve_32_32_32_32.png
+    ├── loss_curve_[128_128].png
+    ├── loss_curve_[128_63_32]_negatives_2.png
+    ├── loss_curve_[128_63_32]_negatives_3.png
+    ├── loss_curve_[32_32].png
+    ├── loss_curve_[32_32_32_32].png
+    └── loss_curve_model_32_32.png
 ```
 
 
@@ -65,6 +79,10 @@
 			<table>
 			<tr>
 				<td><b><a href='https://github.com/LI-SUJU/neural_collaborative_filtering/blob/master/NCF.py'>NCF.py</a></b></td>
+				<td><code>❯ REPLACE-ME</code></td>
+			</tr>
+			<tr>
+				<td><b><a href='https://github.com/LI-SUJU/neural_collaborative_filtering/blob/master/NCF_degraded.py'>NCF_degraded.py</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			</table>
