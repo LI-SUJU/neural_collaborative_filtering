@@ -20,7 +20,6 @@
 - [📍 Overview](#-overview)
 - [👾 Dataset](#-dataset)
 - [📁 Project Structure](#-project-structure)
-  - [📂 Project Index](#-project-index)
 - [🚀 Getting Started](#-getting-started)
   - [☑️ Prerequisites](#-prerequisites)
   - [⚙️ Installation](#-installation)
