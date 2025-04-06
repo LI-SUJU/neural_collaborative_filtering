@@ -204,17 +204,13 @@ def train_model(model, train_loader, val_loader, optimizer, criterion, device, e
         avg_val_loss = np.mean(epoch_val_loss)
         val_losses.append(avg_val_loss)
         print(f"Epoch {epoch}: Train {avg_train_loss:.4f}, Val {avg_val_loss:.4f}")
-        
+
         if avg_val_loss < best_val_loss:
             best_val_loss = avg_val_loss
             best_state = model.state_dict()
             no_improve = 0
-            print("no_improve", no_improve)
-            print("best_val_loss", best_val_loss)
-
         else:
             no_improve += 1
-            print("no_improve", no_improve)
             if no_improve >= early_stop_patience:
                 print("Early stopping.")
                 model.load_state_dict(best_state)
@@ -222,9 +218,7 @@ def train_model(model, train_loader, val_loader, optimizer, criterion, device, e
     return model, train_losses, val_losses
 
 
-def plot_loss_curve(train_losses, val_losses, recall, ndcg, mlp_hidden, save_path):
-    # print the recall and ndcg on the plot
-
+def plot_loss_curve(train_losses, val_losses, save_path="loss_curve.png"):
     plt.figure(figsize=(8, 6))
     plt.plot(range(1, len(train_losses)+1), train_losses, label="Train Loss")
     plt.plot(range(1, len(val_losses)+1), val_losses, label="Val Loss")
@@ -241,12 +235,12 @@ def main():
     data_file = "dataset/ratings.dat"
     if not os.path.exists(data_file):
         raise FileNotFoundError(f"{data_file} 不存在，请下载 MovieLens 1M 数据集。")
-    num_negatives = 3
-    train_samples, val_samples, test_samples, num_users, num_items, train_positive_by_user = preprocess_data(
-        data_file, min_rating=4, num_negatives=num_negatives, test_ratio=0.15, val_ratio=0.15)
 
-    print(f"train samples: {len(train_samples)}, val samples: {len(val_samples)}, test samples: {len(test_samples)}")
-    print(f"#users: {num_users}, #item: {num_items}")
+    train_samples, val_samples, test_samples, num_users, num_items, train_positive_by_user = preprocess_data(
+        data_file, min_rating=4, num_negatives=2, test_ratio=0.15, val_ratio=0.15)
+
+    print(f"训练样本: {len(train_samples)}, 验证样本: {len(val_samples)}, 测试样本: {len(test_samples)}")
+    print(f"用户数: {num_users}, 物品数: {num_items}")
 
     train_dataset = NCFDataset(train_samples)
     val_dataset = NCFDataset(val_samples)
@@ -254,18 +248,17 @@ def main():
     val_loader = DataLoader(val_dataset, batch_size=256, shuffle=False)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    mlp_hidden=[128, 63, 32]
-    model = NCF(num_users, num_items, gmf_dim=16, mlp_dim=64, mlp_hidden=mlp_hidden, dropout=0.2).to(device)
+    model = NCF(num_users, num_items, gmf_dim=16, mlp_dim=32, mlp_hidden=[128, 64, 32, 32], dropout=0.2).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-4)
     criterion = nn.BCELoss()
 
     model, train_losses, val_losses = train_model(model, train_loader, val_loader, optimizer, criterion, device,
                                                   epochs=40, early_stop_patience=5)
+    plot_loss_curve(train_losses, val_losses)
 
     recall, ndcg = evaluate_model(model, train_positive_by_user, test_samples, num_users, num_items,
                                   k=10, num_negatives=99, device=device)
-    print(f"Test Recall@10: {recall:.4f}, Test NDCG@10: {ndcg:.4f}, mlp_hidden: {mlp_hidden}, num_negatives: {num_negatives}")
-    plot_loss_curve(train_losses, val_losses, recall, ndcg, mlp_hidden, save_path=f"loss_curve_{mlp_hidden}_negatives_{num_negatives}.png")
+    print(f"Test Recall@10: {recall:.4f}, Test NDCG@10: {ndcg:.4f}")
 
 
 if __name__ == "__main__":
