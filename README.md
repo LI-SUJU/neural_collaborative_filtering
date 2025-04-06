@@ -20,9 +20,6 @@
 - [👾 Dataset](#-dataset)
 - [📁 Project Structure](#-project-structure)
 - [🚀 Getting Started](#-getting-started)
-  - [☑️ Prerequisites](#-prerequisites)
-  - [⚙️ Installation](#-installation)
-  - [🤖 Usage](#🤖-usage)
 - [🔰 Contributing](#-contributing)
 - [🎗 License](#-license)
 
