@@ -73,26 +73,6 @@ Place the dataset file `ratings.dat` into the `dataset/` directory.
 ```
 
 
-### 📂 Project Index
-<details open>
-	<summary><b><code>NEURAL_COLLABORATIVE_FILTERING/</code></b></summary>
-	<details> <!-- __root__ Submodule -->
-		<summary><b>__root__</b></summary>
-		<blockquote>
-			<table>
-			<tr>
-				<td><b><a href='https://github.com/LI-SUJU/neural_collaborative_filtering/blob/master/NCF.py'>NCF.py</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/LI-SUJU/neural_collaborative_filtering/blob/master/NCF_degraded.py'>NCF_degraded.py</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			</table>
-		</blockquote>
-	</details>
-</details>
-
 ---
 ## 🚀 Getting Started
 
@@ -132,6 +112,9 @@ Run neural_collaborative_filtering using the following command:
 ```bash
 python NCF.py
 ```
+### Outputs
+- Training and validation loss curves saved as `.png`
+- Test metrics printed in the console
 
 ---
 
