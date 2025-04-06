@@ -2,9 +2,7 @@
     <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="center" width="30%">
 </p>
 <p align="center"><h1 align="center">NEURAL_COLLABORATIVE_FILTERING</h1></p>
-<p align="center">
-	<em><code>❯ REPLACE-ME</code></em>
-</p>
+
 <p align="center">
 	<img src="https://img.shields.io/github/license/LI-SUJU/neural_collaborative_filtering?style=plastic&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/LI-SUJU/neural_collaborative_filtering?style=plastic&logo=git&logoColor=white&color=0080ff" alt="last-commit">
@@ -20,7 +18,7 @@
 ## 🔗 Table of Contents
 
 - [📍 Overview](#-overview)
-- [👾 Features](#-features)
+- [👾 Dataset](#-dataset)
 - [📁 Project Structure](#-project-structure)
   - [📂 Project Index](#-project-index)
 - [🚀 Getting Started](#-getting-started)
@@ -37,13 +35,18 @@
 
 ## 📍 Overview
 
-<code>❯ REPLACE-ME</code>
+This project implements a Neural Collaborative Filtering (NCF) model using PyTorch, based on the MovieLens 1M dataset. 
+The model combines Generalized Matrix Factorization (GMF) and Multi-Layer Perceptron (MLP) branches to capture both linear and 
+non-linear user-item interactions for personalized recommendation.
 
 ---
 
-## 👾 Features
+## 👾 Dataset
 
-<code>❯ REPLACE-ME</code>
+- **MovieLens 1M**  
+  Download link: [MovieLens 1M Dataset](https://grouplens.org/datasets/movielens/1m/)
+  
+Place the dataset file `ratings.dat` into the `dataset/` directory.
 
 ---
 
@@ -118,24 +121,17 @@ Install neural_collaborative_filtering using one of the following methods:
 
 3. Install the project dependencies:
 
-echo 'INSERT-INSTALL-COMMAND-HERE'
+```bash
+pip install torch pandas numpy matplotlib
+```
 
 
 
 ### 🤖 Usage
 Run neural_collaborative_filtering using the following command:
-echo 'INSERT-RUN-COMMAND-HERE'
-
-### 🧪 Testing
-Run the test suite using the following command:
-echo 'INSERT-TEST-COMMAND-HERE'
-
----
-## 📌 Project Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
+```bash
+python NCF.py
+```
 
 ---
 
@@ -190,6 +186,6 @@ This project is protected under the [SELECT-A-LICENSE](https://choosealicense.co
 
 ## 🙌 Acknowledgments
 
-- List any resources, contributors, inspiration, etc. here.
+- tbd
 
 ---
