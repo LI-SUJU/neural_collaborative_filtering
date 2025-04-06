@@ -4,7 +4,6 @@
 <p align="center"><h1 align="center">NEURAL_COLLABORATIVE_FILTERING</h1></p>
 
 <p align="center">
-	<img src="https://img.shields.io/github/license/LI-SUJU/neural_collaborative_filtering?style=plastic&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/LI-SUJU/neural_collaborative_filtering?style=plastic&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/LI-SUJU/neural_collaborative_filtering?style=plastic&color=0080ff" alt="repo-top-language">
 	<img src="https://img.shields.io/github/languages/count/LI-SUJU/neural_collaborative_filtering?style=plastic&color=0080ff" alt="repo-language-count">
